@@ -1,0 +1,98 @@
+body {
+    max-width: 400px;
+    background-color: #F4F5F6;
+}
+
+#back-button {
+    border: none;
+    background: none;
+    padding: 0px;
+    font-size: 30px;
+    color: white;
+    gap: 95px;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 95px;
+    color: white;
+    background-color:#2D5A27;
+    border: 4px #1C3B19 solid;
+    padding: 10px;
+    white-space: nowrap;
+}
+
+#check-result {
+    font-size: 20px;
+    display: flex;
+    align: center;
+}
+
+a {
+    font-size: 15px;
+    color: black;
+}
+
+#source-text {
+    margin-top: 0px;
+    padding-bottom: 0px;
+    font-size: 15px;
+}
+#head {
+    font-size: 20px;
+}
+
+.center-h1 {
+    text-align: center;
+    border-bottom: 2px black solid;
+}
+
+div {
+    font-size: 30px;
+    display: flex;
+    margin-bottom: 100px;
+    gap: 10px;
+}
+
+select {
+    font-size: 20px;
+}
+
+#results {
+    display: none;
+}
+
+
+#meal-image {
+    width: 400px;
+    height: auto;
+}
+
+#results {
+    margin-bottom: 30px;
+    
+}
+
+label {
+    font-size: 20px;
+}
+#name {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+#name-error {
+    color: red;
+    font-size: 20px;
+}
+
+#meal-description {
+    font-size: 20px;
+}
+
+footer {
+    font-size: 12px;
+}
+
