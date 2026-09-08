@@ -1,6 +1,6 @@
 body {
     max-width: 400px;
-    background-color: #F4F5F6;
+    background-color: #f4f5f6;
 }
 
 #back-button {
@@ -18,8 +18,8 @@ nav {
     align-items: center;
     gap: 95px;
     color: white;
-    background-color:#2D5A27;
-    border: 4px #1C3B19 solid;
+    background-color: #2d5a27;
+    border: 4px #1c3b19 solid;
     padding: 10px;
     white-space: nowrap;
 }
@@ -27,7 +27,7 @@ nav {
 #check-result {
     font-size: 20px;
     display: flex;
-    align: center;
+    align-items: center;
 }
 
 a {
@@ -40,6 +40,7 @@ a {
     padding-bottom: 0px;
     font-size: 15px;
 }
+
 #head {
     font-size: 20px;
 }
@@ -62,22 +63,18 @@ select {
 
 #results {
     display: none;
+    margin-bottom: 30px;
 }
-
 
 #meal-image {
     width: 400px;
     height: auto;
 }
 
-#results {
-    margin-bottom: 30px;
-    
-}
-
 label {
     font-size: 20px;
 }
+
 #name {
     font-size: 20px;
     margin-bottom: 30px;
@@ -95,4 +92,3 @@ label {
 footer {
     font-size: 12px;
 }
-
