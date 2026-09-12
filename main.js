@@ -3,9 +3,13 @@ window.onload = function () {
     let preference = document.getElementById("preferences");
     let backButton = document.getElementById("back-button");
     backButton.onclick = function () {
+        if(result.style.display === "none") {
+            window.location.href ="home.html";
+        } else {
         result.style.display = "none";
-        preference.style.display = "block";
-    };
+        preference.style.display = "flex";
+        }
+    }
 
     function makeDescription(name, meal) {
         return (
@@ -17,6 +21,7 @@ window.onload = function () {
             "."
         );
     }
+
     let resultButton = document.getElementById("check-result");
     resultButton.onclick = function () {
         //variables for user's name
@@ -158,9 +163,17 @@ window.onload = function () {
             } else {
                 mealName.innerHTML = "No meal found";
             }
+            window.localStorage.setItem("meal-name", mealName);
+            window.localStorage.setItem("meal-image", mealImage);
+            window.localStorage.setItem("meal-source", mealSource);
+            window.localStorage.setItem("meals", meal);
+            window.localStorage.setItem("protein", protein);
+            window.localStorage.setItem("budget", budget);
+            window.localStorage.setItem("name", name);
+
             //Show the results based on users selections
             preference.style.display = "none";
-            result.style.display = "block";
+            result.style.display = "flex";
         }
     };
 };
