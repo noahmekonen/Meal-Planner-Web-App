@@ -163,13 +163,22 @@ window.onload = function () {
             } else {
                 mealName.innerHTML = "No meal found";
             }
-            window.localStorage.setItem("meal-name", mealName);
-            window.localStorage.setItem("meal-image", mealImage);
-            window.localStorage.setItem("meal-source", mealSource);
-            window.localStorage.setItem("meals", meal);
-            window.localStorage.setItem("protein", protein);
-            window.localStorage.setItem("budget", budget);
-            window.localStorage.setItem("name", name);
+            let mealsHistory = [];
+            if (window.localStorage.getItem("history-string") !== null) {
+                mealsHistory = JSON.parse(window.localStorage.getItem("history-string"));
+            }
+            let mealsGroup = {
+                mealName: mealName.innerHTML,
+                mealImage: mealImage.src,
+                mealSource: mealSource.href,
+                meal: meal,
+                protein: protein,
+                budget: budget,
+                name: name
+            };
+            mealsHistory.push(mealsGroup);
+            let historyString = JSON.stringify(mealsHistory);
+            window.localStorage.setItem("history-string", historyString);
 
             //Show the results based on users selections
             preference.style.display = "none";

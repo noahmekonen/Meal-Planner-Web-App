@@ -1,34 +1,23 @@
 window.onload = function () {
     let mealsHistory = [];
-
-    let savedMealImage = window.localStorage.getItem("meal-image");
-    if (savedMealImage !== null) {
-        mealsHistory = JSON.parse(savedMealImage);
+    let savedHistory = window.localStorage.getItem("history-string");
+    if (savedHistory === null) {
+         document.getElementById("empty-history").innerHTML = "Start a meal to view your history";
     }
-
-    let savedName = window.localStorage.getItem("name");
-    if (savedName !== null) {
-        mealsHistory = JSON.parse(savedName);
+    if (savedHistory !== null) {
+        mealsHistory = JSON.parse(savedHistory);
     }
-
-    let savedMealName = window.localStorage.getItem("meal-name");
-    if (savedMealName !== null) {
-        mealsHistory = JSON.parse(savedMealName);
+    document.getElementById("history-list").innerHTML = "";
+    for (let i = 0; i < mealsHistory.length; i++) {
+        document.getElementById("history-list").innerHTML += "<li><img src='" + mealsHistory[i].mealImage 
+        + "' alt='" + mealsHistory[i].mealName +"'></li><li>" + mealsHistory[i].mealName + "</li><li>" 
+        + mealsHistory[i].meal + "</li><li>" + mealsHistory[i].protein + "</li><li>" + mealsHistory[i].budget + "</li>" +
+        "<li>Recommended for: " + mealsHistory[i].name + "</li>";
     }
-    
-    let savedMeal = window.localStorage.getItem("meals");
-    if (savedMeal !== null) {
-        mealsHistory = JSON.parse(savedMeal);
-    }
-
-    let savedProtein = window.localStorage.getItem("protein");
-    if (savedProtein !== null) {
-        mealsHistory = JSON.parse(savedProtein);
-    }
-
-    let savedBudget = window.localStorage.getItem("budget");
-    if (savedBudget !== null) {
-        mealsHistory = JSON.parse(savedBudget);
+    document.getElementById("clear-history").onclick = function() {
+        window.localStorage.removeItem("history-string");
+        document.getElementById("history-list").innerHTML = "";
+        document.getElementById("empty-history").innerHTML = "Your meal history has been cleared!";
     }
    
 }
