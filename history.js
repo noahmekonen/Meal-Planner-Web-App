@@ -9,10 +9,9 @@ window.onload = function () {
     }
     document.getElementById("history-list").innerHTML = "";
     for (let i = 0; i < mealsHistory.length; i++) {
-        document.getElementById("history-list").innerHTML += "<li><img src='" + mealsHistory[i].mealImage 
-        + "' alt='" + mealsHistory[i].mealName +"'></li><li>" + mealsHistory[i].mealName + "</li><li>" 
-        + mealsHistory[i].meal + "</li><li>" + mealsHistory[i].protein + "</li><li>" + mealsHistory[i].budget + "</li>" +
-        "<li>Recommended for: " + mealsHistory[i].name + "</li>";
+        document.getElementById("history-list").innerHTML += "<li><strong>Recommended for:</strong> " + mealsHistory[i].name + "</li><img src='" + mealsHistory[i].mealImage 
+        + "' alt='" + mealsHistory[i].mealName +"'><li id=historyPhoto-source>Photo source: <a href='" + mealsHistory[i].mealSource + "'>Pexels</a></li><li>" + mealsHistory[i].mealName + "</li><li>Meal Type: " 
+        + mealsHistory[i].meal + "</li><li>Protein: " + mealsHistory[i].protein + "</li><li id='meal-end'>Budget: " + mealsHistory[i].budget + " dollars</li>";
     }
     document.getElementById("clear-history").onclick = function() {
         window.localStorage.removeItem("history-string");
